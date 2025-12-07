@@ -1,0 +1,227 @@
+$accent1: #4855fe;   // blue
+$accent2: #ffe537;   // yellow
+
+.passion {
+  padding: clamp(40px, 6vw, 80px) 0;
+  color: var(--text);
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+
+    /* Fixed text column + flexible image column (matches light layout) */
+    grid-template-columns: minmax(320px, 520px) 1fr;
+    gap: clamp(40px, 7vw, 96px);
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: clamp(24px, 6vw, 40px);
+    }
+  }
+
+  /* ---------- LEFT (text) ---------- */
+  &__left {
+    max-width: 520px;            /* keeps the column compact like the mock */
+    padding-right: 4px;          /* tiny buffer so text never kisses the gutter */
+  }
+
+  &__title {
+    /* large, but not sprawling; matches the feel of the light shot */
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 clamp(18px, 2.2vw, 26px);
+  }
+
+  /* list spacing + compact measure */
+  &__list {
+    display: grid;
+    gap: clamp(18px, 2.2vw, 24px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: 46ch;             /* controls line length like the screenshot */
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 40px 1fr;  /* icon column width */
+    gap: 14px;
+    align-items: start;
+  }
+
+  &__icon {
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    /* softer badge */
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    color: color-mix(in srgb, var(--primary) 92%, white 0%);
+    box-shadow: 0 4px 10px rgba(0,0,0,.12);
+
+    svg { width: 20px; height: 20px; }
+  }
+
+  &__item-title {
+    font-size: 1rem;             /* like the light layout */
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: var(--text);
+  }
+
+  &__item-desc {
+    font-size: .92rem;
+    line-height: 1.45;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* ---------- RIGHT (images) ---------- */
+  &__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(12px, 2vw, 18px);
+    align-content: start;
+  }
+
+// .tile {
+//     --ratio: 1 / 1;
+//     aspect-ratio: var(--ratio);
+//     border-radius: 16px;
+//     position: relative;
+//     overflow: hidden;
+//     background: var(--card);
+//     box-shadow:
+//       0 1px 0 rgba(255,255,255,.04) inset,
+//       0 14px 28px rgba(0,0,0,.18);
+//     border: 2px solid transparent;
+//     background-clip: padding-box;
+//     transition: transform .3s ease, box-shadow .35s ease;
+//     img {
+//             z-index: 0;   
+//                   position: relative;
+//          /* content layer */
+//        width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//       display: block;
+//       transform: scale(1.001);
+//       transition: transform .35s ease;
+//       border-radius: inherit; /* 🔑 keeps img rounded with tile */
+//     }
+
+//     &::before,
+//     &::after {
+//       position: absolute;
+//       border-radius: inherit;
+//       pointer-events: none;
+//       z-index: 1;            /* <— bring ring & glow above the img */
+//     }
+
+//       &::before {
+//       content: "";
+//       position: absolute;
+//       inset: 0;
+//       border-radius: inherit; /* 🔑 matches img + tile */
+//       padding: 2px;
+//       background: linear-gradient(135deg, $accent1, $accent2);
+//       -webkit-mask:
+//         linear-gradient(#fd1414 0 0) content-box,
+//         linear-gradient(#000 0 0);
+//       -webkit-mask-composite: xor;
+//               mask-composite: exclude;
+//       opacity: 0;
+//       transform: scale(.985);
+//       transition: opacity .28s ease, transform .32s ease;
+//       pointer-events: none;
+//     }
+
+
+//     /* --- soft themed glow --- */
+//    &::after {
+//       content: "";
+//       position: absolute;
+//       inset: 8px;
+//       border-radius: inherit; /* 🔑 ensures glow follows radius */
+//       background: radial-gradient(60% 60% at 50% 50%,
+//                     rgba(72,85,254,.32),
+//                     rgba(255,229,55,.22) 60%,
+//                     transparent 70%);
+//       filter: blur(18px);
+//       opacity: 0;
+//       transition: opacity .35s ease;
+//       pointer-events: none;
+//     }
+
+
+
+//     &:hover,
+//     &:focus-visible {
+//       transform: translateY(-3px);
+
+//       &::before { opacity: 1; transform: scale(1); }
+//       &::after  { opacity: .55; }
+//       img       { transform: scale(1.05); }
+//     }
+//   }
+
+.tile {
+  --ratio: 1 / 1;
+  aspect-ratio: var(--ratio);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .35s ease;
+
+  /* static gradient frame */
+  background: linear-gradient(135deg, $accent1, $accent2);
+  padding: 2px; /* thickness of gradient border */
+
+  /* dark spacer layer */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 6px;   // 👈 dark space width (gap)
+    border-radius: 12px;      /* slightly smaller than outer */
+    background: #0a0f16;      /* match your section bg */
+    z-index: 0;
+  }
+
+  img {
+    position: relative;
+    z-index: 1;               /* sit above dark spacer */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;      /* slightly smaller again */
+    transition: transform .35s ease;
+  }
+
+  /* hover / focus */
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 
+      0 0 24px rgba(72,85,254,.35),
+      0 0 18px rgba(255,229,55,.25);
+
+    img { transform: scale(1.05); }
+  }
+}
+
+
+
+  /* per-card ratios (match the ref look) */
+  .tile:nth-child(1) { --ratio: 5 / 6; }
+  .tile:nth-child(2) { --ratio: 4 / 5; }
+  .tile:nth-child(3) { --ratio: 1 / 1; }
+  .tile:nth-child(4) { --ratio: 4 / 5; }
+
+  /* responsive */
+  @media (max-width: 992px) {
+    &__title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    .tile     { --ratio: 1 / 1; }   /* normalize to squares on mobile */
+  }
+}

@@ -1,0 +1,161 @@
+/* tune these once */
+$gold1: #ffdf7f;
+$gold2: #d4af37;
+$gap-color: #0b0f14;   // match your section bg
+$r: 45px;             // corner radius
+$frame: 2px;          // gold line thickness
+$gap: 6px;            // black space width
+
+
+
+.recipe_section {
+  text-align: center;
+  padding: 4rem 1rem;
+
+  .heading_container {
+    margin-bottom: 3rem;
+
+    h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #fff3e7 !important;
+
+  span {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #4855fe,
+        #ffe537,
+        transparent
+      );
+
+      border-radius: 2px;
+    }
+  }
+}
+
+  }
+
+  .card-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 280px;
+    text-align: center;
+    border: none !important;
+    box-shadow: none !important;
+
+ .img-box {
+      position: relative;
+      border-radius: 0 $r 0 $r;                 // explicit radius
+      overflow: hidden;
+      transition: transform .3s ease;
+
+      /* 1) gold outline (always visible) */
+      background: linear-gradient(135deg, $gold1, $gold2);
+      padding: $frame;                          // thickness of gold line
+
+      /* 2) black gap between outline and image */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: $frame + $gap;                   // width of black gap
+        border-radius: 0 $r 0 $r;               // explicit, not inherit
+        background: $gap-color;
+        z-index: 0;
+      }
+
+      /* 3) image on top */
+      img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 0 $r 0 $r;               // explicit, not inherit
+        transition: transform .3s ease;
+      }
+
+      &:hover img { transform: scale(1.05); }
+    }
+    .detail-box {
+      margin-top: 1rem;
+
+      h4 {
+        font-family: 'bodoni svtytwo sc itc tt book', sans-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+          color: #d2c7b3 !important;
+
+      }
+
+
+      a {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        background-color: #3e3c33;
+        color: #e4c012;
+        border-radius: 50%;
+        transition: all 0.3s;
+        text-decoration: none !important;
+
+        &:hover {
+          background-color: #ffe537;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+
+
+.recipe_section .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 45px;
+}
+
+.recipe_section .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #10100e;
+  color: #aba3a3;
+  border-radius: 45px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #ffe537;
+  outline: none;
+  font-weight: 700;
+  text-decoration-line: none;
+}
+
+.recipe_section .btn-box a:hover {
+  background-color: transparent;
+  color: #ffe537;
+}

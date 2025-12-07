@@ -1,0 +1,341 @@
+// .testimonials-section {
+//   padding: 4rem 2rem;
+//   background: #f9f9f9;
+
+//   .carousel {
+//     max-width: 1200px;
+//     margin: auto;
+
+//     .testimonial-card {
+//       background: white;
+//       padding: 2rem;
+//       border-radius: 16px;
+//       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+//       margin: 0 1rem;
+//       transition: all 0.3s ease;
+
+//       &:hover {
+//         transform: translateY(-5px);
+//       }
+
+//       .user-info {
+//         display: flex;
+//         align-items: center;
+//         gap: 1rem;
+//         margin-bottom: 1rem;
+
+//         img {
+//           width: 48px;
+//           height: 48px;
+//           border-radius: 50%;
+//         }
+
+//         h4 {
+//           margin: 0;
+//           font-size: 16px;
+//           font-weight: 600;
+//           color: #c58a5d;
+//         }
+
+//         small {
+//           font-size: 12px;
+//           color: #aaa;
+//         }
+//       }
+
+//       h5 {
+//         font-weight: 600;
+//         margin-bottom: 0.5rem;
+//       }
+
+//       p {
+//         font-size: 14px;
+//         color: #555;
+//         margin-bottom: 1rem;
+//       }
+
+//       .rating {
+//         display: flex;
+//         align-items: center;
+//         gap: 0.3rem;
+//         font-size: 14px;
+//         color: #c58a5d;
+
+//         i {
+//           color: #c58a5d;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .testimonials-section {
+//   padding: 3rem 0;
+
+//   .testimonial-card {
+//     margin-bottom: 2rem;
+//     padding: 1rem;
+
+//     .testimonial-content {
+//       background: #fff;
+//       border-radius: 10px;
+//       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+//       padding: 2rem;
+//       transition: 0.3s ease;
+//       height: 100%;
+//     }
+
+//     .user-info {
+//       display: flex;
+//       align-items: center;
+//       gap: 1rem;
+//       margin-bottom: 1rem;
+
+//       img {
+//         width: 50px;
+//         height: 50px;
+//         border-radius: 50%;
+//         object-fit: cover;
+//       }
+
+//       h4 {
+//         margin: 0;
+//         font-size: 1rem;
+//         color: #c58a5d;
+//       }
+
+//       small {
+//         display: block;
+//         font-size: 0.85rem;
+//         color: #777;
+//       }
+//     }
+
+//     h5 {
+//       font-weight: bold;
+//       margin: 0.5rem 0;
+//     }
+
+//     p {
+//       color: #666;
+//       font-size: 0.95rem;
+//     }
+
+//     .rating {
+//       margin-top: 1rem;
+//       color: #c58a5d;
+
+//       i {
+//         margin-right: 2px;
+//       }
+//     }
+//   }
+// .testimonial-swiper {
+//   /* make arrows visible + themed */
+//   --swiper-navigation-color: #c58a5d;
+//   --swiper-navigation-size: 18px;
+//   overflow: visible; /* critical so arrows aren't clipped */
+// }
+
+// /* circular buttons, centered vertically, slightly outside */
+// .testimonial-swiper .swiper-button-prev,
+// .testimonial-swiper .swiper-button-next {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   width: 44px;
+//   height: 44px;
+//   border-radius: 50%;
+//   background: #fff;
+//   border: 1px solid #eee;
+//   box-shadow: 0 10px 30px rgba(0,0,0,.08);
+//   z-index: 10;
+//   transition: transform .15s ease, box-shadow .15s ease;
+// }
+
+// .testimonial-swiper .swiper-button-prev:hover,
+// .testimonial-swiper .swiper-button-next:hover {
+//   transform: translateY(-50%) scale(1.05);
+//   box-shadow: 0 12px 36px rgba(0,0,0,.12);
+// }
+
+// /* move them to the sides */
+// .testimonial-swiper .swiper-button-prev { left: -45px; }
+// .testimonial-swiper .swiper-button-next { right: -45px; }
+
+// /* arrow icon size */
+// .testimonial-swiper .swiper-button-prev::after,
+// .testimonial-swiper .swiper-button-next::after {
+//   font-size: 18px; /* uses --swiper-navigation-color for color */
+// }
+
+// /* dots color */
+// .testimonial-swiper .swiper-pagination-bullet {
+//   background: #c58a5d;
+//   opacity: .35;
+// }
+// .testimonial-swiper .swiper-pagination-bullet-active {
+//   opacity: 1;
+// }
+// }
+
+// newwww
+
+
+.testimonials-section {
+  padding: 3rem 0;
+
+  .testimonial-card {
+    margin-bottom: 2rem;
+    padding: 1rem;
+
+    .testimonial-content {
+      background: #dfdbd1;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(42, 41, 41, 0.05);
+      padding: 2rem;
+      transition: 0.3s ease;
+      height: 100%;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 1rem;
+        color: #c58a5d;
+      }
+
+      small {
+        display: block;
+        font-size: 0.85rem;
+        color: #212020;
+      }
+    }
+    h6 { color: #313030;}
+    h5 { font-weight: bold; margin: 0.5rem 0; color: #312f2f; }
+    p  { color: #292727; font-size: 0.95rem; }
+
+    .rating {
+      margin-top: 1rem;
+      color: #4a4258b5;
+
+      i { margin-right: 2px; font-size: 15px; }
+    }
+  }
+
+  /* ===== Swiper Element (web component) arrows & dots ===== */
+  .testimonial-swiper {
+    /* lighter icon & keep arrows visible outside */
+    --swiper-navigation-color: #c58a5d;
+    --swiper-navigation-size: 16px;
+    overflow: visible;
+  }
+
+  /* circular, soft arrows */
+  .testimonial-swiper::part(button-prev),
+  .testimonial-swiper::part(button-next) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: rgba(21, 21, 21, 0.232);
+    border: 1px solid rgba(236, 230, 54, 0.04);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(2px);
+    opacity: 0.9;
+    transition:
+      transform .18s ease,
+      box-shadow .18s ease,
+      background-color .18s ease,
+      opacity .18s ease,
+      border-color .18s ease;
+  }
+
+
+.testimonials-section .testimonials-swiper::part(button-prev),
+.testimonials-section .testimonials-swiper::part(button-next) {
+  display: none !important;
+}
+
+/* allow outside placement */
+.testimonials-section .testimonials-swiper { overflow: visible; }
+  @media (max-width: 768px) {
+    .testimonial-swiper::part(button-prev) { left: 6px; }
+    .testimonial-swiper::part(button-next) { right: 6px; }
+  }
+
+  /* dots: light by default, solid when active */
+  .testimonial-swiper::part(pagination-bullet) {
+    background: #f4d731 ;
+    opacity: .35;
+    width: 8px;
+    height: 8px;
+  }
+  .testimonial-swiper::part(pagination-bullet-active) { opacity: 1 ;  background: #fff; }
+}
+
+// 
+
+/* Pagination bullets — warm sand instead of blue */
+.testimonials-section .testimonials-swiper {
+  /* extra safety if Swiper reads CSS vars */
+  --swiper-pagination-color: #f4d632;
+  --swiper-theme-color: #c58a5d; /* fallback */
+}
+
+/* Element API shadow parts */
+.testimonials-section .testimonials-swiper::part(pagination-bullet) {
+  background: #f1d02d !important;   /* inactive color */
+  opacity: .35;
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.testimonials-section .testimonials-swiper::part(pagination-bullet-active) {
+  opacity: 1;            /* active bullet */
+  transform: scale(1.1);
+}
+
+// 
+
+
+.nav.out {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(13, 13, 14, 0.1); border: 1px solid rgba(242, 221, 60, 0.429);
+  box-shadow: 0 6px 16px rgba(214, 204, 12, 0.06);
+  backdrop-filter: blur(2px);
+  cursor: pointer; z-index: 5;
+}
+.nav.out.prev { left: -28px; }
+.nav.out.next { right: -28px; }
+
+/* draw chevrons with pure CSS */
+.nav.out::before {
+  content: ''; display: block; width: 8px; height: 8px;
+  border-top: 2px solid #c58a5d; border-right: 2px solid #c58a5d;
+  margin: auto;
+}
+.nav.out.prev::before { transform: rotate(-135deg); }
+.nav.out.next::before { transform: rotate(45deg); }
+
+@media (max-width: 768px) {
+  .nav.out.prev { left: 6px; }
+  .nav.out.next { right: 6px; }
+}

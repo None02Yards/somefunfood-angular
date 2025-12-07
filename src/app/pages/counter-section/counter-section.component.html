@@ -1,0 +1,16 @@
+
+<section class="counter-section" aria-label="App statistics">
+  <div class="counter-container">
+    <div class="counter-box" *ngFor="let item of counters">
+      <div class="icon-wrap">
+        <i [class]="item.icon" aria-hidden="true"></i>
+      </div>
+
+      <h2 class="stat">
+        <span class="val">{{ item.value }}</span><sup class="suffix">k</sup>
+      </h2>
+
+      <p class="label">{{ item.label }}</p>
+    </div>
+  </div>
+</section>

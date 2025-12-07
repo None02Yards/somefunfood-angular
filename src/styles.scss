@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+router-outlet + * {
+    margin-bottom: 80px; 
+  }
+
+
+  img, video, .slider, .swiper, .background-image {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* light (current) */
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #9aa4b2;
+  --surface: #f7f8fb;
+  --card: #ffffff;
+  --border: rgba(15, 23, 42, 0.08);
+
+  --primary: #4855fe;  /* you can keep */
+  --accent: #ffe537;   /* your yellow */
+}
+
+body.dark {
+  /* dark */
+  --bg: #020202;               /* page background */
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --surface: #020202;          /* section surface */
+  --card: #111827;             /* cards/forms */
+  --border: rgba(255, 255, 255, 0.06);
+  --primary: #6a7aff;          /* softer blue for dark */
+  --accent: #ffe537;           /* keep the same pop */
+}
+.section { background: var(--surface); border:1px solid var(--border); border-radius:24px; }
+.card    { background: none !important;    border:1px solid var(--border); border-radius:20px;
+           box-shadow:0 12px 24px rgba(0,0,0,.22); }
+.text-muted { color: var(--muted); }
+
+/* global */
+/* styles.scss (or a global SCSS file) */
+:root {
+  --bg: #020202;          /* page background */
+  --surface: #0f1525;     /* sections */
+  --card: #55504124;        /* cards/inputs */
+  --text: #e5e7eb;        /* main text */
+  --muted: #9ca3af;       /* secondary text */
+  --border: rgba(255,255,255,0.06);
+  --primary: #6a7aff;     /* softer blue for dark */
+  --accent: #ffe537;      /* your yellow */
+}
+
+html, body { background: var(--bg); color: var(--text); }
+* { transition: background-color .25s ease, color .25s ease, border-color .25s ease; }

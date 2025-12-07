@@ -1,0 +1,35 @@
+
+
+<section
+  #sectionRoot
+  class="logos-strip"
+  [@fadeInUp]
+>
+  <div class="container">
+
+    <div class="arrow left" type="button" (click)="scroll('left')" aria-label="Previous">
+      <span>←</span>
+    </div>
+
+    <div
+      #track
+      class="track"
+      aria-label="Brand logos carousel"
+      (mouseenter)="onPointerEnter()"
+      (mouseleave)="onPointerLeave()"
+      (focusin)="onFocusIn()"
+      (focusout)="onFocusOut()"
+      (touchstart)="onTouchStart()"
+      (touchend)="onTouchEnd()"
+    >
+      <div class="item" *ngFor="let l of logos; index as i" tabindex="0">
+        <img [src]="l.src" [alt]="l.alt" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="arrow right" type="button" (click)="scroll('right')" aria-label="Next">
+      <span>→</span>
+    </div>
+
+  </div>
+</section>

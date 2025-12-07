@@ -1,0 +1,39 @@
+<section class="passion">
+  <div class="container">
+    <!-- Left: text content -->
+    <div class="passion__left">
+      <h2 class="passion__title">{{ heading }}</h2>
+
+      <ul class="passion__list" role="list">
+        <li class="passion__item" *ngFor="let b of bullets">
+          <span class="passion__icon" aria-hidden="true">
+            <!-- simple inline icons to avoid deps -->
+            <svg *ngIf="b.icon === 'shrimp'" viewBox="0 0 24 24"><path fill="currentColor"
+              d="M3 12a7 7 0 0 1 7-7h7a4 4 0 1 1 0 8h-6a3 3 0 1 0 0 6h1a1 1 0 1 1 0 2h-1a5 5 0 0 1-5-5H5a2 2 0 1 1 0-4h1a5 5 0 0 1 4-3H6a5 5 0 0 0-3 3Z"/></svg>
+            <svg *ngIf="b.icon === 'fish'" viewBox="0 0 24 24"><path fill="currentColor"
+              d="M21 12s-3-5-9-5a9 9 0 0 0-8 5 9 9 0 0 0 8 5c6 0 9-5 9-5Zm-5.5 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0Z"/></svg>
+            <svg *ngIf="b.icon === 'pepper'" viewBox="0 0 24 24"><path fill="currentColor"
+              d="M12 3c-1.1 0-2 .9-2 2v2H8a4 4 0 0 0-4 4v1a7 7 0 0 0 7 7h2a7 7 0 0 0 7-7v-1a4 4 0 0 0-4-4h-2V5a2 2 0 0 0-2-2Z"/></svg>
+          </span>
+          <div>
+            <h3 class="passion__item-title">{{ b.title }}</h3>
+            <p class="passion__item-desc">{{ b.desc }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: images grid -->
+    <div class="passion__right">
+      
+      <div
+        class="tile"
+        [class.tile--tall]="img.tile === 'tall'"
+        *ngFor="let img of images; index as i"
+      >
+        <img [src]="img.src" [alt]="img.alt || ('Photo ' + (i + 1))" />
+      </div>
+      
+    </div>
+  </div>
+</section>

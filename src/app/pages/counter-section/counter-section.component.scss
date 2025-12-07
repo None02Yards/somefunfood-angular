@@ -1,0 +1,93 @@
+
+
+$primary1: #4855fe;   // blue
+$primary2: #ffe537;   // yellow
+$bg-darker: #020202;
+$text-muted: rgba(255,255,255,.6);
+
+.counter-section {
+  padding: clamp(32px, 6vw, 72px) 0;
+  margin-bottom: 55px !important;
+  background: $bg-darker;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-bottom: clamp(18px, 3vw, 32px);
+    background: linear-gradient(90deg, transparent, $primary1, $primary2, transparent);
+    opacity: .35;
+  }
+
+  .counter-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(16px, 2.5vw, 28px);
+    justify-items: center;
+
+    @media (max-width: 992px) { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 576px) { grid-template-columns: 1fr; }
+  }
+
+  .counter-box {
+    text-align: center;
+    max-width: 220px;
+
+    .icon-wrap {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(6px);
+      position: relative;
+      transition: transform .25s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        background: conic-gradient(from 180deg, $primary1, $primary2, $primary1);
+        mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
+        -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
+        opacity: .6;
+      }
+
+      i {
+        font-size: 24px;
+        color: #fff;
+      }
+    }
+
+    h2 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 800;
+      line-height: .9;
+      color: #fff;
+
+      .suffix {
+        font-size: .55em;
+        position: relative;
+        top: -.35em;
+      }
+    }
+
+    p {
+      font-size: .95rem;
+      color: $text-muted;
+    }
+
+    &:hover .icon-wrap {
+      transform: translateY(-2px);
+    }
+  }
+}

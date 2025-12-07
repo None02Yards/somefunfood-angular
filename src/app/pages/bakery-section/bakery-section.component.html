@@ -1,0 +1,29 @@
+
+<!-- src\app\pages\bakery-section\bakery-section.component.html -->
+<section class="bakery-section" [@fadeInUp]>
+ <div class="centered-content">
+  
+  <h2 class="title">
+    We're proud to be named one of the best bread bakeries in New York City & Miami
+  </h2>
+  <div class="text-center subtitle">
+    Serving the community with our artisan breads since 1980
+  </div>
+</div>
+  <div class="categories" *ngIf="isVisible()">
+    <div
+      class="category"
+      *ngFor="let cat of categories; let i = index"
+      [@fadeInUp]
+      [style.animation-delay]="(i * 200) + 'ms'"
+      style="animation-fill-mode: both;"
+    >
+      <div class="image-box">
+        <img [src]="cat.img" [alt]="cat.title" />
+      </div>
+      <h3>{{ cat.title }}</h3>
+      <p>{{ cat.desc }}</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+</section>

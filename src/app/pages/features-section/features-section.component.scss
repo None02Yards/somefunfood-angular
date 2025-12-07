@@ -1,0 +1,26 @@
+.thin-line {
+//   width: 100%;
+  height: 1px;
+  background: linear-gradient( 90deg, transparent, #4855fe, #ffe537, transparent); // light gray like in the screenshot
+  margin: 0 310px;
+}
+
+.features-section {
+    margin: 50px 40px;
+  .feature-box {
+    color: #3c3c3c;
+    font-family: 'Georgia', serif;
+    h5 {
+      font-weight: 500;
+    }
+
+    img {
+      opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+
+    &:hover img {
+      opacity: 1;
+    }
+  }
+}

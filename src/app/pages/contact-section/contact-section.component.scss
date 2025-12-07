@@ -1,0 +1,194 @@
+.contact-section {
+  padding: 5rem 2rem;
+  background: url('../../../assets/home-decor-3.png');
+
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    padding: 2rem 2.5rem;
+    
+    .subheading {
+      color: #c58a5d;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: capitalize !important;
+    }
+
+    .main-heading {
+      font-size: 2rem;
+      color: #d4c3b2;
+      font-weight: 600;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+  .contact-form {
+  flex: 1;
+  background: #242326b5;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgb(255 235 59 / 22%);
+  max-width: 460px;
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #dfdacf;
+  }
+
+  p {
+    font-size: 14px;
+    color: #d4c3b2;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input,
+    textarea {
+      width: 100%;
+      background-color: #e7ddd6; // soft beige
+      border: none;
+      border-radius: 40px;
+      padding: 14px 20px;
+      font-size: 14px;
+      color: #2d2d2d;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.3s ease;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #e2c5b3;
+      }
+    }
+
+    textarea {
+      border-radius: 20px;
+      resize: none;
+      min-height: 100px;
+    }
+
+   button {
+  width: 165px;
+  height: 55px;
+  margin: 0 auto; // center horizontally
+  background-color: #ffe537;
+  color: #020202;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid #efdd30;
+  border-radius: 999px; // perfect pill
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    background-color:#29292a36;
+    color: #efdd30;
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(208, 163, 124, 0.3);
+  }
+}
+
+  }
+}
+
+
+.contact-images {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; // push both to right
+
+  .image-box {
+    width: 380px;
+    height: 400px;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+    }
+  }
+
+  .top-image {
+    position: absolute;
+    top: 0;
+    right: 150px; // adjust to control overlap
+    z-index: 5;
+  }
+
+.bottom-image {
+  margin-top: 120px;
+  position: relative;
+  z-index: 1;
+
+  .dot-pattern {
+    position: absolute;
+    bottom: -80px;
+    left: 270px;
+    width: 120px;
+    height: 120px;
+    background-image: radial-gradient(#c58a5d 1.5px, transparent 1.5px);
+    background-size: 12px 12px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0; // initial hidden for animation
+    animation: zoomIn 0.6s ease-out forwards;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+// ✅ KEYFRAMES must be outside any class
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+  }
+}
+}

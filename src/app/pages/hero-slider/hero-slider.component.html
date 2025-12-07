@@ -1,0 +1,42 @@
+<section class="hero-section">
+  <div class="hero-content">
+<h1>
+  Discover <span>Restaurant And Food</span>
+</h1>
+    <p>when looking at its layout. The point of using Lorem Ipsum</p>
+
+    <!-- Search Form -->
+    <form class="search-form">
+      <div class="input-wrap">
+        <input type="text" placeholder="Restaurant Name" />
+      </div>
+
+      <div class="input-wrap location">
+        <input type="text" placeholder="All Locations" />
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+      </div>
+
+      <button type="submit" class="search-btn">
+        SEARCH
+      </button>
+    </form>
+  </div>
+
+<div class="dish-stage">
+  <div class="dish-preview">
+    <button class="arrow left" (click)="scrollDishes('left')">←</button>
+    <div class="dishes">
+      <div
+        *ngFor="let i of dishImages; let idx = index"
+        [ngClass]="'dish-item position-' + idx"
+      >
+        <img
+          [src]="'assets/images/slider-img' + i + '.png'"
+          [alt]="'Bowl ' + i"
+        />
+      </div>
+    </div>
+    <button class="arrow right" (click)="scrollDishes('right')">→</button>
+  </div>
+  </div>
+</section>

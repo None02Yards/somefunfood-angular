@@ -1,0 +1,50 @@
+
+<section class="testimonials-section">
+  <div class="container position-relative">
+ <!-- external buttons -->
+    <button class="nav out prev" aria-label="Previous"></button>
+    <button class="nav out next" aria-label="Next"></button>
+
+    <swiper-container
+      class="testimonials-swiper"
+      pagination="true"
+      loop="true"
+      autoplay='{"delay":4000,"disableOnInteraction":true}'
+      slides-per-view="3"
+      space-between="24"
+      breakpoints='{
+        "0":   {"slidesPerView":1,"spaceBetween":16},
+        "768": {"slidesPerView":2,"spaceBetween":24},
+        "992": {"slidesPerView":3,"spaceBetween":24}
+      }'
+    >
+      <swiper-slide *ngFor="let t of testimonials">
+        <div class="testimonial-card h-100 p-3">
+          <div class="testimonial-content">
+            <div class="user-info d-flex align-items-center gap-3 mb-3">
+              <img [src]="t.img" alt="user" class="rounded-circle" width="50" height="50" />
+              <div>
+                <h5 class="mb-0 text-orange">{{ t.name }}</h5>
+                <small class="text-muted">{{ t.title }}</small>
+              </div>
+            </div>
+
+            <h6 class="fw-bold">{{ t.heading }}</h6>
+            <p>{{ t.text }}</p>
+
+            <div class="rating mt-3 text-orange">
+              <strong>5.0</strong>
+              <ng-container *ngFor="let _ of stars">
+                <i class="fas fa-star ms-1"></i>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+
+  </div>
+</section>
+
+
+
