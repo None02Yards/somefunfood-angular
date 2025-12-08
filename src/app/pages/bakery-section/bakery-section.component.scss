@@ -1,195 +1,8 @@
-
-// .bakery-section {
-//   padding: 4rem 2rem;
-//   text-align: center;
-
-//   .subtitle {
-//     color: #d0a37c;
-//     font-weight: 500;
-//     font-size: 14px;
-//     margin-bottom: 1rem;
-//     text-transform: uppercase;
-//   }
-
-//   .title {
-//     font-size: 32px;
-//     font-weight: 600;
-//     color: #2e2e3a;
-//     margin-bottom: 3rem;
-//     max-width: 700px;
-//     margin-inline: auto;
-//   }
-
-//   .categories {
-//     display: flex;
-//     justify-content: center;
-//     gap: 3.5rem;
-//     flex-wrap: wrap;
-
-//     .category {
-//       width: 380px;
-//       padding: 1rem;
-//       border-radius: 10px;
-//       transition: transform 0.3s ease;
-
-//       .image-box {
-//         width: 100%;
-//         aspect-ratio: 1 / 1;
-//         border-radius: 10px;
-//         overflow: hidden;
-//           border: 1px solid transparent;
-//   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-
-//         img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//           display: block;
-//         }
-
-// &:hover {
-//     border: 8px solid #ffffff;
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-
-//     .image-box img {
-//       transform: scale(0.94); // slight zoom-out
-//     }
-//   }
-        
-//       }
-
-
-//       h3 {
-//         font-size: 20px;
-//         margin-top: 1rem;
-//         margin-bottom: 0.5rem;
-//         color: #2e2e3a;
-//       }
-
-//       p {
-//         font-size: 14px;
-//         color: #7a7d8c;
-//         margin-bottom: 1rem;
-//       }
-
-//       a {
-//         font-size: 14px;
-//         color: #d0a37c;
-//         text-decoration: none;
-//         font-weight: 500;
-//       }
-
-//       &:hover {
-//         transform: translateY(-5px);
-//       }
-//     }
-//   }
-// }
-
 // put these at top (or remove if you already have globals)
-$primary1: #4855fe;   // blue
-$primary2: #ffe537;   // yellow
+$primary1: #4855fe; // blue
+$primary2: #ffe537; // yellow
 
-// .bakery-section {
 
-//     padding: 4rem 2rem;
-//   text-align: center;
-
-//   .subtitle {
-//     color: #d0a37c;
-//     font-weight: 500;
-//     font-size: 14px;
-//     margin-bottom: 1rem;
-//     text-transform: uppercase;
-//   }
-
-//   .title {
-//     font-size: 32px;
-//     font-weight: 600;
-//     color: #2e2e3a;
-//     margin-bottom: 3rem;
-//     max-width: 700px;
-//     margin-inline: auto;
-//   }
-
-//   .categories {
-//     display: flex;
-//     justify-content: center;
-//     gap: 3.5rem;
-//     flex-wrap: wrap;
-
-//     .category {
-//       width: 380px;
-//       padding: 1rem;
-//       border-radius: 10px;
-//       transition: transform .3s ease;
-
-//       .image-box {
-//         position: relative;
-//         width: 100%;
-//         aspect-ratio: 1 / 1;
-//         border-radius: 10px;
-//         overflow: hidden;
-
-//         // keep layout stable (no jump on hover)
-//         border: 2px solid transparent;
-
-//         img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//           display: block;
-//           transition: transform .35s ease;
-//         }
-
-//         /* --- animated gradient stroke --- */
-//         &::before {
-//           content: "";
-//           position: absolute;
-//           inset: 0;
-//           border-radius: inherit;
-//           padding: 2px; /* stroke thickness */
-//           background: linear-gradient(135deg, $primary1, $primary2);
-//           /* cut the center so only a 2px ring shows */
-//           -webkit-mask:
-//             linear-gradient(#000 0 0) content-box,
-//             linear-gradient(#000 0 0);
-//           -webkit-mask-composite: xor;
-//                   mask-composite: exclude;
-//           opacity: 0;
-//           transform: scale(.985); /* subtle grow on hover */
-//           transition: opacity .3s ease, transform .35s ease;
-//           pointer-events: none;
-//         }
-
-//         /* --- soft outer glow --- */
-//         &::after {
-//           content: "";
-//           position: absolute;
-//           inset: -6px;            /* tiny spread outside */
-//           border-radius: inherit;
-//           background: radial-gradient(60% 60% at 50% 50%,
-//                         rgba(72,85,254,.35), rgba(255,229,55,.25) 60%, transparent 70%);
-//           filter: blur(18px);
-//           opacity: 0;
-//           transition: opacity .35s ease;
-//           pointer-events: none;
-//         }
-//       }
-
-//       /* hover state */
-//       &:hover {
-//         transform: translateY(-5px);
-
-//         .image-box {
-//           img { transform: scale(.96); }
-//           &::before { opacity: 1; transform: scale(1); }
-//           &::after  { opacity: .6; } /* glow strength */
-//         }
-//       }
-//     }
-//   }
-// }
 
 .bakery-section {
   padding: 4rem 2rem;
@@ -201,11 +14,75 @@ $primary2: #ffe537;   // yellow
     gap: 3.5rem;
     flex-wrap: wrap;
 
-     .category {
+    .category {
       width: 380px;
       padding: 1rem;
       border-radius: 10px;
       transition: transform .3s ease;
+
+      // .image-box {
+      //   position: relative;
+      //   width: 100%;
+      //   aspect-ratio: 1 / 1;
+      //   border-radius: 10px;
+      //   overflow: hidden;
+
+      //   // keep layout stable (no jump on hover)
+      //   border: 2px solid transparent;
+
+      //   img {
+      //     width: 100%;
+      //     height: 100%;
+      //     object-fit: cover;
+      //     display: block;
+      //     transition: transform .35s ease;
+      //   }
+
+      //   /* --- animated gradient stroke --- */
+      //   &::before {
+      //     content: "";
+      //     position: absolute;
+      //     inset: 0;
+      //     border-radius: inherit;
+      //     padding: 2px; /* stroke thickness */
+      //     background: linear-gradient(135deg, $primary1, $primary2);
+      //     /* cut the center so only a 2px ring shows */
+      //     -webkit-mask:
+      //       linear-gradient(#000 0 0) content-box,
+      //       linear-gradient(#000 0 0);
+      //     -webkit-mask-composite: xor;
+      //             mask-composite: exclude;
+      //     opacity: 0;
+      //     transform: scale(.985); /* subtle grow on hover */
+      //     transition: opacity .3s ease, transform .35s ease;
+      //     pointer-events: none;
+      //   }
+
+      //   /* --- soft outer glow --- */
+      //   &::after {
+      //     content: "";
+      //     position: absolute;
+      //     inset: -6px;            /* tiny spread outside */
+      //     border-radius: inherit;
+      //     background: radial-gradient(60% 60% at 50% 50%,
+      //                   rgba(72,85,254,.35), rgba(255,229,55,.25) 60%, transparent 70%);
+      //     filter: blur(18px);
+      //     opacity: 0;
+      //     transition: opacity .35s ease;
+      //     pointer-events: none;
+      //   }
+      // }
+
+      // /* hover state */
+      // &:hover {
+      //   transform: translateY(-5px);
+
+      //   .image-box {
+      //     img { transform: scale(.96); }
+      //     &::before { opacity: 1; transform: scale(1); }
+      //     &::after  { opacity: .6; } /* glow strength */
+      //   }
+      // }
 
       .image-box {
         position: relative;
@@ -214,69 +91,144 @@ $primary2: #ffe537;   // yellow
         border-radius: 10px;
         overflow: hidden;
 
-        // keep layout stable (no jump on hover)
-        border: 2px solid transparent;
-
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           display: block;
           transition: transform .35s ease;
+
+          position: relative;
+          z-index: 0;
         }
 
-        /* --- animated gradient stroke --- */
+        /* --- soft outer glow (behind stroke, partly outside) --- */
+        &::after {
+          content: "";
+          position: absolute;
+          inset: -6px;
+          /* tiny spread outside */
+          border-radius: inherit;
+          background: radial-gradient(60% 60% at 50% 50%,
+              rgba(72, 85, 254, .35), rgba(255, 229, 55, .25) 60%, transparent 70%);
+          filter: blur(18px);
+          opacity: 0;
+          transition: opacity .35s ease, transform .35s ease;
+          pointer-events: none;
+          z-index: 1;
+          /* behind stroke, above the image */
+          transform: scale(.99);
+        }
+
+        /* --- animated gradient stroke (on top of image) --- */
         &::before {
           content: "";
           position: absolute;
           inset: 0;
           border-radius: inherit;
-          padding: 2px; /* stroke thickness */
-          background: linear-gradient(135deg, $primary1, $primary2);
-          /* cut the center so only a 2px ring shows */
+          padding: 3px;
+          /* stroke thickness */
+          background: linear-gradient(135deg, #ae2727, #ffe537, blue);
+          /* cut the center so only a thin ring shows */
           -webkit-mask:
             linear-gradient(#000 0 0) content-box,
             linear-gradient(#000 0 0);
           -webkit-mask-composite: xor;
-                  mask-composite: exclude;
+          mask-composite: exclude;
+
           opacity: 0;
-          transform: scale(.985); /* subtle grow on hover */
+          transform: scale(.985);
+          /* subtle grow on hover */
           transition: opacity .3s ease, transform .35s ease;
           pointer-events: none;
+          z-index: 2;
+          /* above glow and image */
         }
 
-        /* --- soft outer glow --- */
-        &::after {
-          content: "";
+
+        .hover-layer {
           position: absolute;
-          inset: -6px;            /* tiny spread outside */
-          border-radius: inherit;
-          background: radial-gradient(60% 60% at 50% 50%,
-                        rgba(72,85,254,.35), rgba(255,229,55,.25) 60%, transparent 70%);
-          filter: blur(18px);
+          inset: 0;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          padding-bottom: 24px;
+          background: linear-gradient( to top, rgba(98, 95, 95, 0.91), rgba(170, 94, 94, 0.09));
+          transform: translateY(100%);
+          /* start hidden (moved down) */
+          transition: transform .42s cubic-bezier(.2, .9, .2, 1), opacity .32s;
           opacity: 0;
-          transition: opacity .35s ease;
+          z-index: 4;
           pointer-events: none;
         }
-      }
 
-      /* hover state */
-      &:hover {
-        transform: translateY(-5px);
+        .order-btn {
+          pointer-events: auto;
+          color: #000;
+          padding: 12px 28px;
+          border-radius: 30px;
+          border: none;
+          font-weight: 600;
+          cursor: pointer;
+          position: relative;
+          bottom: 80px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+          transition: transform .25s ease, box-shadow .25s ease;
+        }
 
-        .image-box {
-          img { transform: scale(.96); }
-          &::before { opacity: 1; transform: scale(1); }
-          &::after  { opacity: .6; } /* glow strength */
+        /* Show gradient stroke + glow on hover / focus / JS-active */
+        &:hover::before,
+        &:focus-within::before,
+        &.active::before {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        &:hover::after,
+        &:focus-within::after,
+        &.active::after {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+
+
+        /* Trigger on mouse hover, keyboard focus, and when parent has .active (JS) */
+        &:hover .hover-layer,
+        &:focus-within .hover-layer,
+        &.active .hover-layer {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        /* keep image subtle zoom when layer appears */
+        &:hover img,
+        &:focus-within img,
+        &.active img {
+          transform: scale(1.05);
+        }
+
+        .order-btn:hover {
+          background-color: #00000015;
+          border: 1px solid $primary2;
+          font-weight: 600;
         }
       }
-    
+
+      .category:hover .image-box img {
+        transform: scale(1.05);
+      }
+
+
+
+
 
       h3 {
         font-size: 20px;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
-        color: #ccc0b8; 
+        color: #ccc0b8;
       }
 
       p {
@@ -296,31 +248,31 @@ $primary2: #ffe537;   // yellow
 
 
   .centered-content {
-  max-width: 700px;      
-  margin: 0 auto 3rem;   
-  padding: 2rem 1.5rem;  
-  text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
 
-  /* optional: create a soft visual container look */
-  // background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
-}
+    /* optional: create a soft visual container look */
+    // background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+  }
 
-.subtitle {
-  font-size: 0.7rem;
-  letter-spacing: 1.5px;
-  color: rgba(255, 255, 255, 0.75);
-  margin-top: 1rem;
-  text-transform: uppercase;
-}
+  .subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 1rem;
+    text-transform: uppercase;
+  }
 
-.title {
-  font-size: 2rem;
-  line-height: 1.3;
-  font-weight: 600;
-  color: #ffefe5; 
+  .title {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 600;
+    color: #ffefe5;
 
-}
+  }
 
 }

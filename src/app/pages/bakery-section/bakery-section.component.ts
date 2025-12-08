@@ -1,38 +1,3 @@
-// import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-
-// @Component({
-//   selector: 'app-bakery-section',
-//   standalone: true,
-//   imports: [CommonModule],
-//   templateUrl: './bakery-section.component.html',
-//   styleUrls: ['./bakery-section.component.scss']
-// })
-
-
-// export class BakerySectionComponent {
-
-
-//   categories = [
-//     {
-//       title: 'Bakery',
-//       img: 'assets/images/bakery-3.jpg',
-//       desc: 'Made with wholesome, all-natural ingredients, our products are hand-formed and baked fresh throughout the day.'
-//     },
-//     {
-//       title: 'Lunch',
-//       img: 'assets/images/r2.jpg',
-//       desc: 'Made with wholesome, all-natural ingredients, our products are hand-formed and baked fresh throughout the day.'
-//     },
-//     {
-//       title: 'Breakfast',
-//       img: 'assets/images/r3.jpg',
-//       desc: 'Made with wholesome, all-natural ingredients, our products are hand-formed and baked fresh throughout the day.'
-//     }
-//   ];
-
-  
-// }
 
 import { Component, ElementRef, AfterViewInit, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
