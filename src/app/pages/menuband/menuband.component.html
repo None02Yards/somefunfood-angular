@@ -1,0 +1,21 @@
+<!-- menu-band.component.html -->
+<section class="menu-band">
+  <div class="container">
+    <div class="menu-grid" role="list">
+      <a *ngFor="let item of menuItems" class="menu-tile" role="listitem" href="#">
+        <div class="tile-media">
+          <img [src]="item.img" [alt]="item.title" />
+        </div>
+        <div class="tile-caption">
+          <span class="caption-title">{{ item.title }}</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- optional floating utilities on the right -->
+    <div class="float-utilities" aria-hidden="true">
+      <button class="util util--chat">💬</button>
+      <button class="util util--cart">🛒</button>
+    </div>
+  </div>
+</section>
