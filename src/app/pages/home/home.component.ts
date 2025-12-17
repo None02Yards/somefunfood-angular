@@ -1,3 +1,4 @@
+// src\app\pages\home\home.component.ts
 import { Component } from '@angular/core';
 import { HeroSliderComponent } from '../hero-slider/hero-slider.component';
 import { RecipesComponent } from '../recipes/recipes.component';

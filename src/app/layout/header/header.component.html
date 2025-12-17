@@ -1,27 +1,33 @@
+
+
 <div class="welcome-screen">
-  <!-- Top Nav -->
   <header class="navbar">
-    <div class="navbar__logo">Delfood</div>
+    <div class="navbar__logo">DelFooD</div>
 
     <nav class="navbar__menu">
-      <a href="#" class="navbar__link">Demos</a>
-      <a href="#" class="navbar__link">Features</a>
+      <a href="#" class="navbar__link">Home</a>
+      <a href="#" class="navbar__link">features</a>
+      <a href="#" class="navbar__link">Pages</a>
 
-      <!-- Menu trigger: the link AND the dropdown are inside this container -->
+      <!-- Menu trigger container: link + dropdown band -->
       <div class="menu-trigger">
-        <a href="#" class="navbar__link navbar__link--menu"
-           aria-haspopup="true" aria-expanded="false" id="menu-trigger-link">
-          Menu
-        </a>
+     <a href="#"
+   class="navbar__link navbar__link--menu"
+   (click)="toggleMenu($event)"
+   aria-haspopup="true"
+   [attr.aria-expanded]="showMenu">
+  MENU
+</a>
 
-        <!-- DROPDOWN BAND (moved inside the trigger container) -->
-        <div class="menu-dropdown" role="menu" aria-labelledby="menu-trigger-link">
-          <app-menuband></app-menuband>
-        </div>
+<div class="menu-dropdown" *ngIf="showMenu">
+  <div class="menu-dropdown__inner">
+    <app-menuband></app-menuband>
+  </div>
+</div>
       </div>
 
-      <a href="#" class="navbar__link">Visual Builder</a>
-      <a href="#" class="navbar__link">Download</a>
+      <a href="#" class="navbar__link">Shop</a>
+      <a href="#" class="navbar__link">Landing</a>
     </nav>
 
     <button class="navbar__cart">

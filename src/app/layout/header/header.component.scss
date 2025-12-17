@@ -86,77 +86,170 @@
 
 
 /* container */
-.menu-dropdown {
-  width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition:
-    max-height .45s cubic-bezier(.25,.9,.2,1),
-    opacity .35s ease,
-    transform .35s ease;
-  pointer-events: none;
-}
+// /* Menu trigger wrapper */
+// .menu-trigger {
+//   position: relative; /* still needed for hover */
+// }
 
-/* Hovering the MENU link OR the entire navbar */
-.navbar__menu:hover .navbar__link--menu,
-.navbar__link--menu:hover,
-.navbar:hover ~ .menu-dropdown,
-.menu-dropdown:hover {
-  /* dropdown opens */
-  max-height: 600px;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+// /* FULL-WIDTH CENTERED MEGA MENU */
+// .menu-dropdown {
+//   position: absolute;
+//   top: 100%;                /* below header */
+//   left: 50%;                /* center anchor */
+//   transform: translateX(-50%) translateY(10px);
 
-.menu-wrapper {
-  position: absolute;
-  top: 60px;     // below the nav bar
-  left: 0;
-  width: 100%;
-  z-index: 9999;
-}
-/* container for the menu link + dropdown */
+//   width: 100vw;
+//   max-width: 100vw;
+//   background: #fff;
+//   z-index: 1000;
+
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: all 0.25s ease;
+// }
+
+// /* SHOW ON HOVER */
+// .menu-trigger:hover .menu-dropdown {
+//   opacity: 1;
+//   visibility: visible;
+//   transform: translateX(-50%) translateY(0);
+// }
+
+// /* INNER CONTENT CONTAINER */
+// .menu-dropdown__inner {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 40px 20px;
+// }
+
+// /* Show dropdown when hovering/focusing the trigger */
+// .menu-trigger:hover .menu-dropdown,
+// .menu-trigger:focus-within .menu-dropdown {
+//   display: block;
+// }
+
+// /* small visual for the menu link when open */
+// .menu-trigger:focus-within .navbar__link--menu,
+// .menu-trigger:hover .navbar__link--menu {
+//   color: #fff;
+// }
+
+// /* Make the dropdown visually detach from header on wide screens */
+// @media (min-width: 960px) {
+//   .menu-dropdown {
+//     left: 50%;
+//     transform: translateX(-50%);
+//   }
+// }
+
+// /* On small screens, make dropdown position static and full width below nav */
+// @media (max-width: 768px) {
+//   .menu-dropdown {
+//     position: static;
+//     transform: none;
+//     width: 100%;
+//     top: auto;
+//   }
+//   .menu-dropdown__inner {
+//     border-radius: 0;
+//     padding: 14px;
+//   }
+// }
+
+// .menu-trigger {
+//   position: relative;
+// }
+
+// .menu-dropdown {
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   width: 100vw;
+//   background: #fff;
+//   opacity: 0;
+//   visibility: hidden;
+//   transform: translateY(10px);
+//   transition: all 0.25s ease;
+//   z-index: 1000;
+// }
+
+// .menu-trigger:hover .menu-dropdown {
+//   opacity: 1;
+//   visibility: visible;
+//   transform: translateY(0);
+// }
+
+
+/* ===============================
+   MENU TRIGGER
+   =============================== */
 .menu-trigger {
-  position: relative; /* dropdown positioned relative to this */
-  display: inline-block;
+  position: relative;
 }
 
-/* hide dropdown by default */
+/* ===============================
+   MEGA MENU DROPDOWN (DESKTOP)
+   =============================== */
 .menu-dropdown {
-  display: none;
   position: absolute;
-  top: 100%; /* sits below the link */
-  left: 0;
-  margin-top: 8px;
-  min-width: 260px; /* adjust as needed */
-  z-index: 999;
-  pointer-events: auto;
-  /* aesthetic */
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  padding: 12px;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+
+  width: 100vw;
+  // background: #fff;
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* show when hovering the trigger */
+/* ===============================
+   SHOW MENU (HOVER + FOCUS)
+   =============================== */
 .menu-trigger:hover .menu-dropdown,
 .menu-trigger:focus-within .menu-dropdown {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
 }
 
-/* optional: ensure the Menu link indicates open state (for styling) */
+/* ===============================
+   INNER CONTAINER
+   =============================== */
+.menu-dropdown__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ===============================
+   TRIGGER VISUAL STATE
+   =============================== */
 .menu-trigger:hover .navbar__link--menu,
 .menu-trigger:focus-within .navbar__link--menu {
-  /* highlight the trigger */
-  color: #e44; /* or your brand color */
+  color: #fff;
 }
 
-/* small responsive tweak: on small screens you might want click-to-open instead */
-/* you can add a .open class via JS for mobile if needed */
+/* ===============================
+   MOBILE BEHAVIOR
+   =============================== */
 @media (max-width: 768px) {
-  .menu-dropdown { position: static; display: none; box-shadow: none; }
-  .menu-trigger.open .menu-dropdown { display: block; }
+  .menu-dropdown {
+    position: static;
+    width: 100%;
+    transform: none;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .menu-dropdown__inner {
+    padding: 16px;
+  }
 }

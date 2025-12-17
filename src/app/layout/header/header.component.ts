@@ -12,6 +12,10 @@ import { MenubandComponent } from '../../pages/menuband/menuband.component'; // 
 })
 export class HeaderComponent {
 
+ showMenu = false;
 
-  showMenu = false;
+  toggleMenu(event: Event) {
+    event.preventDefault();
+    this.showMenu = !this.showMenu;
+  }
 }

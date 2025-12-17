@@ -1,3 +1,4 @@
+// src\app\app.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';   // for *ngIf
 import { RouterOutlet, Router } from '@angular/router';
