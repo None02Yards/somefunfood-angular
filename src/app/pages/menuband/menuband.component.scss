@@ -1,5 +1,5 @@
 // variables (tweak to match your theme)
-$band-bg: #0f2f2a;       // dark green band
+$band-bg: rgb(39 30 5 / 98%);       // dark green band
 $tile-gap: 36px;
 $tile-size: clamp(160px, 18vw, 260px);
 $caption-color: rgba(255,255,255,0.85);
@@ -17,22 +17,20 @@ $accent: #ffe537;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
-    position: relative;
   }
 
-  /* grid of square tiles */
   .menu-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); // exactly 3 tiles in one row
     gap: $tile-gap;
-    align-items: start;
     justify-items: stretch;
+    align-items: start;
 
     @media (max-width: 980px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr); // 2 tiles on tablet
     }
     @media (max-width: 640px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; // 1 tile on mobile
     }
   }
 
@@ -45,7 +43,6 @@ $accent: #ffe537;
     color: $caption-color;
     background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.06));
     transition: transform .28s ease, box-shadow .28s ease;
-    will-change: transform;
 
     &:hover,
     &:focus {
@@ -56,7 +53,7 @@ $accent: #ffe537;
 
     .tile-media {
       width: 100%;
-      aspect-ratio: 1/1; /* keeps square */
+      aspect-ratio: 1/1;
       overflow: hidden;
       background: #0a0a0a;
       position: relative;
@@ -78,7 +75,6 @@ $accent: #ffe537;
       filter: grayscale(0%) contrast(1) brightness(1.02);
     }
 
-    /* small caption area at lower-left like the screenshot */
     .tile-caption {
       position: absolute;
       left: 12px;
@@ -96,11 +92,9 @@ $accent: #ffe537;
         background: rgba(0,0,0,0.22);
         padding: 6px 10px;
         border-radius: 4px;
-        pointer-events: none;
       }
     }
 
-    /* optional thin gradient stroke on hover (outer ring) */
     &::before {
       content: "";
       position: absolute;
@@ -127,27 +121,16 @@ $accent: #ffe537;
     }
   }
 
-  /* small floating utilities (right) */
-  .float-utilities {
-    position: absolute;
-    right: 16px;
-    top: 12%;
-    z-index: 6;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .skeleton {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #111 0%, #1a1a1a 50%, #111 100%);
+    animation: shimmer 1.2s infinite linear;
+  }
 
-    .util {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      border: none;
-      background: $accent;
-      color: #000;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      cursor: pointer;
-    }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 }
+

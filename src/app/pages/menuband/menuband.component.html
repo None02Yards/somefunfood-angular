@@ -1,21 +1,24 @@
-<!-- menu-band.component.html -->
-<section class="menu-band">
+<div class="menu-band">
   <div class="container">
-    <div class="menu-grid" role="list">
-      <a *ngFor="let item of menuItems" class="menu-tile" role="listitem" href="#">
+    <div class="menu-grid">
+      <a *ngFor="let it of menuItems" class="menu-tile" href="#">
         <div class="tile-media">
-          <img [src]="item.img" [alt]="item.title" />
+          <ng-container *ngIf="it.loading">
+            <div class="skeleton"></div>
+          </ng-container>
+
+          <ng-container *ngIf="!it.loading && it.img">
+            <img [src]="it.img" [alt]="it.title" />
+          </ng-container>
+
+          <ng-container *ngIf="!it.loading && it.error">
+            <div class="tile-caption">Image unavailable</div>
+          </ng-container>
         </div>
         <div class="tile-caption">
-          <span class="caption-title">{{ item.title }}</span>
+          <span class="caption-title">{{ it.title }}</span>
         </div>
       </a>
     </div>
-
-    <!-- optional floating utilities on the right -->
-    <div class="float-utilities" aria-hidden="true">
-      <button class="util util--chat">💬</button>
-      <button class="util util--cart">🛒</button>
-    </div>
   </div>
-</section>
+</div>
